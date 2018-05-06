@@ -27,8 +27,9 @@ public class Queens {
         int n = q.length;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if (q[i] == j) System.out.print("Q ");
-                else
+                if (q[i] == j) {
+                    System.out.print("Q ");
+                } else
                     System.out.print("* ");
             }
             System.out.println();
@@ -47,11 +48,14 @@ public class Queens {
 
     public static void enumerate(int[] q, int k) {
         int n = q.length;
-        if (k == n) printQueens(q);
-        else {
+        if (k == n) {
+            printQueens(q);
+        } else {
             for (int i = 0; i < n; i++) {
                 q[k] = i;
-                if (isConsistent(q, k)) enumerate(q, k+1);
+                if (isConsistent(q, k)) {
+                    enumerate(q, k+1);
+                }
             }
         }
     }
