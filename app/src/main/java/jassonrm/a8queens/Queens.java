@@ -1,6 +1,10 @@
 package jassonrm.a8queens;
 
 public class Queens {
+
+    public static int[] a;
+
+
     /***************************************************************************
      * Return true if queen placement q[n] does not conflict with
      * other queens q[0] through q[n-1]
@@ -42,7 +46,7 @@ public class Queens {
      *  Try all permutations using backtracking
      ***************************************************************************/
     public static void enumerate(int n) {
-        int[] a = new int[n];
+        a = new int[n];
         enumerate(a, 0);
     }
 
@@ -60,7 +64,7 @@ public class Queens {
         }
     }
 
-    public void start(){
+    public static void start(){
         //Here the algorithm starts!
         enumerate(8);
     }
