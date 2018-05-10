@@ -25,15 +25,16 @@ public class Board extends AppCompatActivity {
         boardGrid.setAdapter(new ImageAdapter(this));
 
         startBtn = findViewById(R.id.startBtn);
-        board++;
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                board++;
                 if (board > 92) {
                     board = 1;
                 }
                 Queens.enumerate(8, board);
                 ImageAdapter adapter = (ImageAdapter) boardGrid.getAdapter();
+                System.out.println("Button CLICKED");
                 adapter.notifyDataSetChanged();
             }
         });

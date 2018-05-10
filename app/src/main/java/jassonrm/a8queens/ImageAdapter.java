@@ -61,7 +61,8 @@ public class ImageAdapter extends BaseAdapter {
         }
         else{
             //imagen transparente
-            //queen.setImageResource(R.mipmap.queen);
+            queen.setImageResource(R.mipmap.queen);
+            queen.setImageAlpha(0);
         }
         return queen;
     }
