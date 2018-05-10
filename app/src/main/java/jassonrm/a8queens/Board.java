@@ -29,10 +29,10 @@ public class Board extends AppCompatActivity {
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (board > 92){
+                if (board > 92) {
                     board = 1;
                 }
-                Queens.enumerate(8,board);
+                Queens.enumerate(8, board);
                 ImageAdapter adapter = (ImageAdapter) boardGrid.getAdapter();
                 adapter.notifyDataSetChanged();
             }

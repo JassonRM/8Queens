@@ -48,7 +48,7 @@ public class ImageAdapter extends BaseAdapter {
         }else{
             queen = (ImageView) view;
         }
-        if (Queens.queens[column] == row){
+        if (Queens.queens != null && Queens.queens[column] == row) {
             queen.setImageResource(R.mipmap.queen);
         }
         else{
