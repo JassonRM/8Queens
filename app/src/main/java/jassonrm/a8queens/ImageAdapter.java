@@ -65,6 +65,8 @@ public class ImageAdapter extends BaseAdapter {
             queen.setImageResource(R.mipmap.queen);
             queen.setImageAlpha(0);
         }
+
+        System.out.println(i + " " + column + " " + row);
         return queen;
     }
 
