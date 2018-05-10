@@ -25,23 +25,6 @@ class Queens {
         return true;
     }
 
-    /***************************************************************************
-     * Prints n-by-n placement of queens from permutation q in ASCII.
-     ***************************************************************************/
-    public static void printQueens(int[] q) {
-        int n = q.length;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (q[i] == j) {
-                    System.out.print("Q ");
-                } else
-                    System.out.print("* ");
-            }
-            System.out.println();
-        }
-        System.out.println();
-    }
-
 
     /***************************************************************************
      *  Try all permutations using backtracking
@@ -55,7 +38,6 @@ class Queens {
         int n = q.length;
         if (k == n) {
             if (count == board){
-
                 queens = q;
                 count = 1;
                 return true;

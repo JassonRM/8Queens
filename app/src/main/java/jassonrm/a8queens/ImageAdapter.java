@@ -34,8 +34,16 @@ public class ImageAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+
         int column = i % 8 - 1;
-        int row = i / 8 - 1;
+
+        if(i == 0){column =0;}
+        else if (column == -1){column = 7;}
+
+        int row = i / 8;
+        if(i % 8 == 0){
+            row--;
+        }
         ImageView queen;
         if(view == null) {
             queen = new ImageView(mContext);
