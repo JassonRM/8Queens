@@ -58,6 +58,7 @@ public class ImageAdapter extends BaseAdapter {
         }
         if (Queens.queens != null && Queens.queens[column] == row) {
             queen.setImageResource(R.mipmap.queen);
+            queen.setImageAlpha(255);
         }
         else{
             //imagen transparente

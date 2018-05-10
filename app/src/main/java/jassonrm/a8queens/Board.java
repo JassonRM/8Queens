@@ -33,6 +33,9 @@ public class Board extends AppCompatActivity {
                     board = 1;
                 }
                 Queens.enumerate(8, board);
+                for (int i = 0; i < 8; i++){
+                    System.out.println(Queens.queens[i]);
+                }
                 ImageAdapter adapter = (ImageAdapter) boardGrid.getAdapter();
                 System.out.println("Button CLICKED");
                 adapter.notifyDataSetChanged();
