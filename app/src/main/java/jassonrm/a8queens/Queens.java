@@ -1,8 +1,9 @@
 package jassonrm.a8queens;
 
-public class Queens {
+class Queens {
 
-    public static int[] a;
+    public static int[] queens;
+    public static int count = 1;
 
 
     /***************************************************************************
@@ -45,27 +46,34 @@ public class Queens {
     /***************************************************************************
      *  Try all permutations using backtracking
      ***************************************************************************/
-    public static void enumerate(int n) {
-        a = new int[n];
-        enumerate(a, 0);
+    public static void enumerate(int n, int board) {
+
+        enumerate(new int[n], 0,board);
     }
 
-    public static void enumerate(int[] q, int k) {
+    public static boolean enumerate(int[] q, int k, int board) {
         int n = q.length;
         if (k == n) {
-            printQueens(q);
+            if (count == board){
+
+                queens = q;
+                count = 1;
+                return true;
+            }else{
+                count++;
+                return false;
+            }
         } else {
             for (int i = 0; i < n; i++) {
                 q[k] = i;
                 if (isConsistent(q, k)) {
-                    enumerate(q, k+1);
+                    if (enumerate(q, k+1,board) == true){
+                        return true;
+                    }
                 }
             }
+            return false;
         }
     }
 
-    public static void start(){
-        //Here the algorithm starts!
-        enumerate(8);
-    }
 }

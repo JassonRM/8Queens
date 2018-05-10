@@ -34,6 +34,8 @@ public class ImageAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+        int column = i % 8 - 1;
+        int row = i / 8 - 1;
         ImageView queen;
         if(view == null) {
             queen = new ImageView(mContext);
@@ -46,7 +48,13 @@ public class ImageAdapter extends BaseAdapter {
         }else{
             queen = (ImageView) view;
         }
-        queen.setImageResource(R.mipmap.queen);
+        if (Queens.queens[column] == row){
+            queen.setImageResource(R.mipmap.queen);
+        }
+        else{
+            //imagen transparente
+            //queen.setImageResource(R.mipmap.queen);
+        }
         return queen;
     }
 
